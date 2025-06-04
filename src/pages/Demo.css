@@ -1,0 +1,14 @@
+.card-corte {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-corte:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.descripcion-corte {
+  font-size: 1.2rem;
+  color: #333;
+  text-align: center;
+  margin: 0.5em 0;
+}

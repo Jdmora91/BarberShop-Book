@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(-45deg, #000000, #1a1a1a, #2a2a2a, #000000);
+  background-size: 400% 400%;
+  animation: fondoMover 15s ease infinite;
+  color: white;
+}
+
+@keyframes fondoMover {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+html, body, #root {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  background-color: #000; /* o tu fondo degradado */
+  color: white;
+}
+.titulo-barberia {
+  font-family: 'Georgia', serif;
+  font-size: 3.5rem;
+  color: #222;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-weight: 700;
+  text-shadow:
+    2px 2px 0 #b37b0d,
+    4px 4px 5px rgba(0, 0, 0, 0.3);
+  border-bottom: 3px solid #b37b0d;
+  padding-bottom: 0.3em;
+  max-width: fit-content;
+  margin: 0 auto;
+}
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+}
+
+.titulo-principal {
+  text-align: center;
+  color: #2405af;
+  font-size: 2rem;
+  text-shadow: #f4f4f4;
+  font-family: 'Georgia', serif;
+
+}
+.formulario-cita {
+  padding: 20px;
+  background: #f3f3f3;
+  border-radius: 10px;
+}
+
+.formulario-cita form {
+  display: flex;
+  flex-direction: column;
+}
+
+.formulario-cita input,
+.formulario-cita button {
+  padding: 8px;
+  margin-bottom: 10px;
+}
