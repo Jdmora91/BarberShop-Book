@@ -51,6 +51,7 @@ export const Demo = () => {
 ];
 
 return (
+  <div className="container mt-4 bg-light" style={{ minHeight: "100vh" }}>
   <div style={estilos.contenedor}>
     <h1 className="titulo-principal">Estilos Y Diseños</h1>
     <div style={estilos.galeria}>
@@ -64,6 +65,7 @@ return (
         </div>
       ))}
     </div>
+  </div>
   </div>
 );
 };
@@ -99,9 +101,9 @@ const estilos = {
   },
   descripcion: {
    
-    color: "white",
+    color: "red",
     textAlign: "center",
-    backgroundColor: "red",
+    backgroundColor: "white",
     margin: "2rem 0",
     fontWeight: "100",
     flexGrow: 1,
