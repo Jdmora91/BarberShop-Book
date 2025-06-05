@@ -10,6 +10,8 @@ import { Home } from "./pages/Home";
 import { Single } from "./pages/Single";
 import { Demo } from "./pages/Demo";
 import SacarCitas from "./pages/SacarCitas.jsx";
+import ConfirmaCita from "./pages/ConfirmaCita.jsx";
+import Contactenos from "./pages/Contactenos.jsx";
 
 
 
@@ -29,6 +31,8 @@ export const router = createBrowserRouter(
         <Route path="/single/:theId" element={ <Single />} />  {/* Dynamic route for single items */}
         <Route path="/demo" element={<Demo />} />
         <Route path="/sacarcitas" element={<SacarCitas />} /> 
+        <Route path="/ConfirmaCita" element={<ConfirmaCita />} /> 
+        <Route path="/Contactenos" element={<Contactenos/>} />
       </Route>
     )
 );

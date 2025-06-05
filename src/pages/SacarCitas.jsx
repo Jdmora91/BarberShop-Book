@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import { useNavigate } from "react-router-dom";
+import "./SacarCita.css"; // Import local styles for the confirmation page
 
 function SacarCitas() {
   const [nombre, setNombre] = useState("");
@@ -18,79 +19,45 @@ function SacarCitas() {
       fecha: fecha.toLocaleString(),
     };
 
-    // Aquí puedes guardar la cita en la API o localStorage
     console.log("Cita agendada:", cita);
-
-    // Simulamos guardado y redirigimos
-    alert("¡Cita agendada con éxito!");
-    navigate("/");
+    navigate("/ConfirmaCita");
   };
 
   return (
-    <div className="container mt-4 bg-light" style={{ minHeight: "100vh" }}>
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          height: "100vh"
-        }}
-      >
-        <div className="formulario-cita bg-primary" style={{ maxWidth: "400px", width: "100%" }}>
+    <div className="cita-container">
+      <div className="cita-card">
+        <h2 className="titulo-cita">Agendar Cita</h2>
+        <form onSubmit={handleSubmit} className="form-cita">
+          <label>Nombre:</label>
+          <input
+            type="text"
+            value={nombre}
+            onChange={(e) => setNombre(e.target.value)}
+            required
+            placeholder="Escribe tu nombre"
+          />
 
-          <h2 className="text-#002147" style={{
-            color: "#002147",
-            fontWeight: "bold",
-            fontSize: "2.5rem",
-            fontFamily: "sans-serif",
-            textShadow: "1px 4px 9px white", // sombra para contraste
-            textTransform: "uppercase",
-            letterSpacing: "2px"
-          }}>Agendar Cita</h2>
-          <form onSubmit={handleSubmit}>
-            <label className=" text-light" style={{
-              fontWeight: "bold",
-              fontSize: "1rem",
-              fontFamily: "'Lobster', cursive",
-              textShadow: "1px 4px 9px red", // sombra para contraste
-              textTransform: "uppercase",
-              letterSpacing: "1px"
-            }}
-            > <strong> Nombre: </strong> </label>
-            <input type="text" value={nombre} onChange={(e) => setNombre(e.target.value)} required />
+          <label>Teléfono:</label>
+          <input
+            type="tel"
+            value={telefono}
+            onChange={(e) => setTelefono(e.target.value)}
+            required
+            placeholder="Ej: 555-123-4567"
+          />
 
-             <label className=" text-light" style={{
-              fontWeight: "bold",
-              fontSize: "1rem",
-              fontFamily: "'Lobster', cursive",
-              textShadow: "1px 4px 9px red", // sombra para contraste
-              textTransform: "uppercase",
-              letterSpacing: "1px"
-            }}
-            >Teléfono:</label>
-            <input type="tel" value={telefono} onChange={(e) => setTelefono(e.target.value)} required />
+          <label>Fecha y Hora:</label>
+          <DatePicker
+            selected={fecha}
+            onChange={(date) => setFecha(date)}
+            showTimeSelect
+            dateFormat="Pp"
+            minDate={new Date()}
+            className="datepicker"
+          />
 
-            <label className=" text-light" style={{
-              fontWeight: "bold",
-              fontSize: "1rem",
-              fontFamily: "'Lobster', cursive",
-              textShadow: "1px 4px 9px red", // sombra para contraste
-              textTransform: "uppercase",
-              letterSpacing: "1px"
-            }}
-            >Fecha y Hora:</label>
-            <DatePicker
-              selected={fecha}
-              onChange={(date) => setFecha(date)}
-              showTimeSelect
-              dateFormat="Pp"
-              minDate={new Date()}
-            />
-
-            <button type="submit" style={{ marginTop: "10px", background: "#002147", color: "white", padding: "10px 20px", border: "none", borderRadius: "5px", fontSize: "1.2rem", fontWeight: "bold", cursor: "pointer"
-            }}>Agendar Cita</button>
-          </form>
-        </div>
+          <button type="submit">Agendar Cita</button>
+        </form>
       </div>
     </div>
   );

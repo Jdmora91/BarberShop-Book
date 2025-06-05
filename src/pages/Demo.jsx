@@ -51,9 +51,9 @@ export const Demo = () => {
 ];
 
 return (
-  <div className="container mt-4 bg-light" style={{ minHeight: "100vh" }}>
-  <div style={estilos.contenedor}>
-    <h1 className="titulo-principal">Estilos Y Diseños</h1>
+  <div className="container mt-4" style={{ minHeight: "100vh", }}>
+  <div classname="row justify-center" style={estilos.contenedor}>
+    <h1 className="titulo-principal" style={{color: "white"}}> <strong>Estilos Y Diseños</strong></h1>
     <div style={estilos.galeria}>
       {cortes.map((corte) => (
         <div key={corte.id} style={estilos.card} className="card-corte">
@@ -73,7 +73,7 @@ return (
 const estilos = {
   contenedor: {
     padding: "2rem",
-    backgroundColor: "#f9f9f9",
+    backgroundColor: "linear-gradient",
   },
   galeria: {
     display: "flex",
@@ -85,8 +85,9 @@ const estilos = {
     width: "260px",
     height: "420px",
     padding: "1rem",
-    backgroundColor: "#fff",
+    backgroundColor: "rgba(129, 154, 184, 0.87)",
     borderRadius: "12px",
+    border:" 1px solid #ccc",
     boxShadow: "0 4px 8px rgba(0,0,0,0.1)",
     textAlign: "center",
     display: "flex",
@@ -100,13 +101,14 @@ const estilos = {
     borderRadius: "8px",
   },
   descripcion: {
-   
-    color: "red",
+    fontfamily: "playfair display",
+    color: "white",
     textAlign: "center",
-    backgroundColor: "white",
+    backgroundColor: "rgba(129, 154, 184, 0.87)",
     margin: "2rem 0",
     fontWeight: "100",
     flexGrow: 1,
+    
   },
   boton: {
     backgroundColor: "blue",

@@ -44,6 +44,7 @@ body {
   padding-bottom: 0.3em;
   max-width: fit-content;
   margin: 0 auto;
+  animation: fadeIn 1s ease-in-out;
 }
 body {
   margin: 0;
@@ -54,9 +55,10 @@ body {
 .titulo-principal {
   text-align: center;
   color: #2405af;
-  font-size: 2rem;
-  text-shadow: #f4f4f4;
+  font-size: 4rem;
+  text-shadow: #a4e706;
   font-family: 'Georgia', serif;
+  animation: fadeIn 2s ease-in-out;
 
 }
 .formulario-cita {
@@ -75,3 +77,34 @@ body {
   padding: 8px;
   margin-bottom: 10px;
 }
+.layout-fondo {
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  min-height: 100vh;
+  padding-top: 3rem; /* por si el navbar es fixed */
+}
+.eslogan-barberia {
+  font-family: 'Cinzel', serif; /* estilo clásico y elegante */
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+  color: rgba(4, 2, 131, 0.753); /* letras doradas */
+  text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.6);
+  letter-spacing: 2px;
+  margin: 2rem 0;
+  animation: fadeIn 3s ease-in-out;
+}
+
+/* Animación suave al aparecer */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 2;
+    transform: translateY(0);
+  }
+}
+
+
+
